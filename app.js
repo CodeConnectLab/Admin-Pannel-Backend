@@ -1,17 +1,21 @@
+const dotenv=require('dotenv');
+
+dotenv.config({path:"./config/config.env"});
+
 
 const express = require('express');
 const app = express();
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 const connectDatabase=require("./config/database");
 const bodyparser = require('body-parser');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
-connectDatabase();
+connectDatabase();   
 const Hosting = require("./models/hostingModel");
-  
-app.listen(PORT, function (err) {
-    if (err) console.log(err);
-    console.log("Server listening on PORT", PORT);
+    
+app.listen(PORT, function (err) {  
+    if (err) console.log(err);  
+    console.log("Server listening on PORT", PORT); 
 });
 
 
@@ -46,11 +50,25 @@ app.get("/api/v1/hosting", async (req, res) => {
         hosting   
         }
       );  
-       /// res.send(hosting);
+     
       } catch (error) { 
         res.status(500).send(error);  
       }
 
+  });
+
+  app.get('/', function (req, res) {
+    try {
+        res.status(200).send(
+          {
+          "success":true, 
+           "massage":"get Product"   
+          }
+        );  
+         
+        } catch (error) { 
+          res.status(500).send(error);  
+        }
   });
   
 
