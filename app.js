@@ -12,8 +12,8 @@ const bodyparser = require('body-parser');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(cors());
-connectDatabase();   
-const Hosting = require("./models/hostingModel");
+connectDatabase();    
+const Hosting = require("./models/hostingModel"); 
     
 app.listen(PORT, function (err) {  
     if (err) console.log(err);  
