@@ -10,6 +10,7 @@ const connectDatabase=require("./config/database");
 const bodyparser = require('body-parser');
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
+app.use(cors());
 connectDatabase();   
 const Hosting = require("./models/hostingModel");
     
