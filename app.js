@@ -46,11 +46,9 @@ app.get("/api/v1/hosting", async (req, res) => {
    
     
     try {
+         
       res.status(200).send(
-        {
-        "success":true, 
-        hosting   
-        }
+        hosting 
       );  
      
       } catch (error) { 
