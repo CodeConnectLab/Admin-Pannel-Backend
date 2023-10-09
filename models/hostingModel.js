@@ -5,32 +5,32 @@ const hostingSchema=new mongoose.Schema({
 
     name:{  
         type:String,  
-       // required:[true,"Please Enter Client Name"],
+        required:[true,"Please Enter Client Name"],
         trim:true  
     },
     email:{ 
         type:String,
-       // required:[true,"Please Enter Client Email"],
+        required:[true,"Please Enter Client Email"],
         trim:true
     },
     mobile:{
         type:Number,
-       // required:[true,"Please Enter Mobile Number"],
+        required:[true,"Please Enter Mobile Number"],
         maxlength:[10,"price can not exceed 10 characters"]
     },
     address:{
         type:String,
-       // required:[true,"Please Enter Client Address"],
+        required:[true,"Please Enter Client Address"],
         trim:true
     },
     ip:{
         type:String,
-       // required:[true,"Please Enter Ip Address"],
+        required:[true,"Please Enter Ip Address"],
         trim:true
     },
     domain:{
         type:String,
-       // required:[true,"Please Enter Domaim Name"],
+        required:[true,"Please Enter Domaim Name"],
         trim:true
     },
     
