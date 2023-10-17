@@ -38,6 +38,26 @@ app.post("/api/v1/add_hosting", async (req, res) => {
 
   });
 
+
+  app.post("/api/v1/delete/:id", async (req, res) => {
+   
+    const hosting = await Hosting.findById(req.params.id);
+
+    if (!hosting) {
+      res.status(500).json({
+        success: true,
+        message: "hosting Not Found",
+    });  
+    }
+    await hosting.deleteOne();
+  
+    res.status(200).json({
+      success: true,
+      message: " Delete Successfully",
+    });
+
+  });
+
   
 app.get("/api/v1/hosting", async (req, res) => {
    
