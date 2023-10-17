@@ -33,6 +33,10 @@ const hostingSchema=new mongoose.Schema({
         required:[true,"Please Enter Domaim Name"],
         trim:true
     },
+    status:{
+        type:String,
+        default: 'inactive',
+    },
     
     createdAt:{ 
          type:Date,
