@@ -59,10 +59,12 @@ app.post("/api/v1/add_hosting", async (req, res) => {
   });
 
   
+
+  
 app.get("/api/v1/hosting", async (req, res) => {
    
    
-    const hosting = await Hosting.find();
+    const hosting = await Hosting.findById();
    
     
     try {
@@ -74,6 +76,28 @@ app.get("/api/v1/hosting", async (req, res) => {
       } catch (error) { 
         res.status(500).send(error);  
       }
+
+  });
+
+  app.get("/api/v1/getByDomain", async (req, res) => {
+   
+   
+    const hosting = await Hosting.findById(req.params.domain);
+   
+    
+    try {
+         
+      res.status(200).send(
+        hosting 
+      );  
+     
+      } catch (error) { 
+        res.status(500).send(error);  
+      }
+      
+    
+
+
 
   });
 
