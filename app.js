@@ -23,10 +23,10 @@ app.listen(PORT, function (err) {
 
 app.post("/api/v1/add_hosting", async (req, res) => {
    
-    const {name,email,mobile,address,ip,domain} =req.body;
+    const {name,email,mobile,address,domain} =req.body;
 
     const hosting = await Hosting.create({
-        name,email,mobile,address,ip,domain
+        name,email,mobile,address,domain
     });
    
     

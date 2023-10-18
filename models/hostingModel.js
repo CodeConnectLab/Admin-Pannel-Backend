@@ -23,11 +23,7 @@ const hostingSchema=new mongoose.Schema({
         required:[true,"Please Enter Client Address"],
         trim:true
     },
-    ip:{
-        type:String,
-        required:[true,"Please Enter Ip Address"],
-        trim:true
-    },
+    
     domain:{
         type:String,
         required:[true,"Please Enter Domaim Name"],
