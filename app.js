@@ -79,11 +79,12 @@ app.get("/api/v1/hosting", async (req, res) => {
 
   });
 
-  app.get("/api/v1/getByDomain/:domain", async (req, res) => {
-   const hosting = await Hosting.findById(req.params.domain);
+  app.post("/api/v1/getByDomain/:domain", async (req, res) => {
+    const { domain } = req.body;
+   const hosting = await Hosting.findOne({ domain: domain }); 
     try {
       res.status(200).send(
-        hosting 
+        hosting  
       );  
       } catch (error) { 
         res.status(500).send(error);  
