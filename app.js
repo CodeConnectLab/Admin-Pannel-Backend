@@ -55,7 +55,7 @@ app.post("/api/v1/add_hosting", async (req, res) => {
       success: true,
       message: " Delete Successfully",
     });
-
+ 
   });
 
   
@@ -77,6 +77,27 @@ app.get("/api/v1/hosting", async (req, res) => {
 
   });
 
+      app.put('/api/v1/editHosting/:id', async (req,res) =>{
+        let hosting = Hosting.findById(req.params.id);
+
+        if (!hosting) {
+          return res.status(500).json({
+            success: false,
+            massage: "hosting not found",
+          });
+        }
+      
+        hosting = await Hosting.findByIdAndUpdate(req.params.id, req.body, {
+          new: true,
+          runValidators: true,
+          useFindAndModify: false,
+        });
+      
+        res.status(200).json({
+          success: true,
+          hosting,
+        });
+      })
   app.get('/', function (req, res) {
     try {
         res.status(200).send(
