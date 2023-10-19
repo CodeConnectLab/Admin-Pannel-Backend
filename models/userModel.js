@@ -33,6 +33,21 @@ const userSchema=new mongoose.Schema({
        // required:[true,"Please Enter Domaim Name"],
         trim:true
     },
+    username:{
+        type:String,
+       // required:[true,"Please Enter Domaim Name"],
+        trim:true
+    },
+    password:{
+        type:String,
+       // required:[true,"Please Enter Domaim Name"],
+        trim:true
+    },
+    database:{
+        type:String,
+       // required:[true,"Please Enter Domaim Name"],
+        trim:true
+    },
     
     createdAt:{ 
          type:Date,

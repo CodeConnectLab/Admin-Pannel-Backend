@@ -101,13 +101,13 @@ app.get("/api/v1/hosting", async (req, res) => {
           statue:false,
          data: hosting  
         }); 
-      }else{  
+      } 
         res.status(200).send({
           statue:true,
          data:hosting  
         });
 
-      }
+   
       
         
       } catch (error) {  
