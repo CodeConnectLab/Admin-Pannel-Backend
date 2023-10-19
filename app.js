@@ -30,7 +30,7 @@ app.post("/api/v1/add_hosting", async (req, res) => {
     });
    
     
-    try {
+    try { 
         res.send(hosting);
       } catch (error) {
         res.status(500).send(error);  
