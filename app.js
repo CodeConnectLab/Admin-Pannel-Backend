@@ -98,14 +98,17 @@ app.get("/api/v1/hosting", async (req, res) => {
     try {
       if(!hosting){
         res.status(200).send({
-          status:false,
+          statue:false,
          data: hosting  
         }); 
+      }else{  
+        res.status(200).send({
+          statue:true,
+         data:hosting  
+        });
+
       }
-      res.status(200).send({
-        statue:true,
-       data:hosting  
-      }); 
+      
         
       } catch (error) {  
         res.status(500).send(error);  
