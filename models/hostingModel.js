@@ -31,7 +31,7 @@ const hostingSchema=new mongoose.Schema({
     }, 
     status:{
         type:String,
-        default: 'inactive',
+        trim:true
     },
     
     createdAt:{ 
