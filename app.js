@@ -22,16 +22,16 @@ app.listen(PORT, function (err) {
 
 
 app.post("/api/v1/add_hosting", async (req, res) => {
-   
-    const {name,email,mobile,address,domain} =req.body;
+    //  var states='inactive'; 
+    const {name,email,mobile,address,domain,states} =req.body;
 
-    const hosting = await Hosting.create({
-        name,email,mobile,address,domain
+    const hosting = await Hosting.create({  
+        name,email,mobile,address,domain,states
     });
-   
+        
     
     try { 
-        res.send(hosting);
+        res.send(hosting); 
       } catch (error) {
         res.status(500).send(error);  
       }
