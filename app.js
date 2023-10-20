@@ -120,13 +120,15 @@ app.get("/api/v1/hosting", async (req, res) => {
     try {
       if(!hosting){
         res.status(200).send({
-          statue:false,
-         data: hosting  
+        //   statue:false,
+        //  data: hosting  
+         hosting
         }); 
       } 
         res.status(200).send({
-          statue:true,
-         data:hosting  
+        //   statue:true,
+        //  data:hosting  
+        hosting
         });
 
    
