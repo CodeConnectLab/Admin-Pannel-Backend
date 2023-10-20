@@ -52,8 +52,8 @@ app.post("/api/v1/add_hosting", async (req, res) => {
     await hosting.deleteOne();
   
     res.status(200).json({
-      success: true,
-      message: " Delete Successfully",
+      // success: true,
+      // message: " Delete Successfully",
       hosting
     });
  
