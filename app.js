@@ -85,7 +85,7 @@ app.get("/api/v1/hosting", async (req, res) => {
           return res.status(500).json({
             success: false,
             massage: "hosting not found",
-          });
+          });           
         }
       
         hosting = await Hosting.findByIdAndUpdate(req.params.id, req.body, {
