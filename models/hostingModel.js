@@ -34,6 +34,10 @@ const hostingSchema=new mongoose.Schema({
         default: "inactive",
         trim:true
     },
+    Package:{
+        type:Number,
+        trim:true
+    },
     username:{
         type:String,
        // required:[true,"Please Enter Domaim Name"],
