@@ -25,9 +25,7 @@ app.post("/api/v1/add_hosting", async (req, res) => {
     //  var states='inactive'; 
     const {name,email,mobile,address,domain,states,Package} =req.body;
 
-    const hosting = await Hosting.create({  
-        name,email,mobile,address,domain,states,Package
-    });
+    const hosting = await Hosting.create(req.body);
         
     
     try { 
