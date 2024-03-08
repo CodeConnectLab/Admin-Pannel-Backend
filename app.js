@@ -22,7 +22,20 @@ app.listen(PORT, function (err) {
 
 
 app.post("/api/v1/add_hosting", async (req, res) => {
-    //  var states='inactive'; 
+    const {name,email,mobile,address,domain,states,Package} =req.body;
+
+    const hosting = await Hosting.create(req.body);
+        
+    
+    try { 
+        res.send(hosting); 
+      } catch (error) {
+        res.status(500).send(error);  
+      }
+
+  });
+
+  app.post("/api/v1/add_hosting", async (req, res) => {
     const {name,email,mobile,address,domain,states,Package} =req.body;
 
     const hosting = await Hosting.create(req.body);
@@ -50,9 +63,7 @@ app.post("/api/v1/add_hosting", async (req, res) => {
     await hosting.deleteOne();
   
     res.status(200).json({
-      // success: true,
-      // message: " Delete Successfully",
-      hosting
+       hosting
     });
  
   });
@@ -118,15 +129,11 @@ app.get("/api/v1/hosting", async (req, res) => {
     try {
       if(!hosting){
         res.status(200).send({
-        //   statue:false, 
-        //  data: hosting  
-         hosting
+          hosting
         }); 
       } 
         res.status(200).send({
-        //   statue:true,
-        //  data:hosting  
-        hosting
+           hosting
         }); 
 
    
