@@ -6,7 +6,7 @@ dotenv.config({ path: "./config/config.env" });
 const express = require('express');
 const app = express();
 const cors = require('cors');
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 4001;
 const connectDatabase = require("./config/database");
 const bodyparser = require('body-parser');
 app.use(bodyparser.json());
